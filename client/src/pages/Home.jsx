@@ -26,18 +26,20 @@ const Home = () => {
                     
                     />
                 </motion.header>
-                <motion.div className='home-content' {...headContainerAnimation}>
+                <motion.div className='home-content text-white' {...headContainerAnimation}>
                     <motion.div {...headTextAnimation}>
-                        <h1 className='head-text'>
-                            LETS <br className=' xl:block hidden' /> DO IT!
+                        <h1 className='head-text text-white'>
+                            LETS <br className=' xl:block hidden text-white' /> DO IT!
                         </h1>
                     </motion.div>
                     <motion.div {...headContainerAnimation} className='flex flex-col gap-5'>
-                        <p className='max-w-md font-normal text-gray-600 text-base'>
+                        <p className='max-w-md font-normal text-white text-base'>
                             Create your unique and exlusive T-shirt design with my 3D customization tool. <strong>Unleash your creativity</strong>{" "} and define your own style.
                         </p>
 
-                        <CustomButton type='filled' title='Customize IT' handleClick={() => state.intro = false} customStyles = 'w-fit px-4 py-2.5 font-bold text-sm'/>
+                        <CustomButton
+                         type='filled' title='Customize IT' handleClick={() => state.intro = false} customStyles = 'w-fit px-4 py-2.5 font-bold text-sm'
+                         />
 
                         
                     </motion.div>
