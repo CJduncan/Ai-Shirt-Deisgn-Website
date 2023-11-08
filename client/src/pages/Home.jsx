@@ -43,8 +43,13 @@ const Home = () => {
 
                         
                     </motion.div>
-
+                    <motion.div >
+                        <p>
+                            Made by Connor Duncan
+                        </p>
+                    </motion.div>
                 </motion.div>
+
 
             </motion.section>
         )}
