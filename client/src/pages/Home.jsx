@@ -29,7 +29,7 @@ const Home = () => {
                 <motion.div className='home-content text-white' {...headContainerAnimation}>
                     <motion.div {...headTextAnimation}>
                         <h1 className='head-text text-white'>
-                            LETS <br className=' xl:block hidden text-white' /> DO IT!
+                            LETS <br className=' xl:block hidden text-white' /> CREATE!
                         </h1>
                     </motion.div>
                     <motion.div {...headContainerAnimation} className='flex flex-col gap-5'>
@@ -45,7 +45,7 @@ const Home = () => {
                     </motion.div>
                     <motion.div >
                         <p>
-                            Made by Connor Duncan
+                            A Connor Duncan production. 
                         </p>
                     </motion.div>
                 </motion.div>
