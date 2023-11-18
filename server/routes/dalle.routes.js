@@ -7,7 +7,7 @@ dotenv.config();
 const router = express.Router();
 
 const openai = new OpenAI({
-  apiKey: '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', // It's safer to use an environment variable for the API key
+  apiKey: //api key can go here as well, make sure to use quotes around it or it wont work, // It's safer to use an environment variable for the API key
 });
 
 router.route('/').get((req, res) => {
