@@ -102,27 +102,35 @@ const Customizer = () => {
     let imageUrl;
     const decalType = DecalTypes[type];
 
-    if (result && Array.isArray(result.photo) && result.photo.length > 0) {
-      // Assuming the first element of the array contains the base64 data
+    if (typeof result === 'string') {
+      // Handle base64 string directly (for file input)
+      if (result.startsWith('data:image/png;base64,')) {
+        imageUrl = result;
+      } else {
+        console.error("Invalid base64 string:", result);
+        alert("Base64 string is invalid");
+        return;
+      }
+    } else if (result && Array.isArray(result.photo) && result.photo.length > 0) {
+      // Handle response from OpenAI API
       const base64Data = result.photo[0].b64_json;
-
       if (typeof base64Data === 'string') {
         imageUrl = `data:image/png;base64,${base64Data}`;
       } else {
-        console.error("Invalid base64 data:", base64Data);
-        alert("Base64 image data is invalid");
-        return; // Exit the function if the data is invalid
+        console.error("Invalid base64 data from OpenAI:", base64Data);
+        alert("Base64 image data from OpenAI is invalid");
+        return;
       }
     } else {
       console.error("Invalid image data:", result);
       alert("Image data is undefined or invalid");
-      return; // Exit the function if the data is invalid
+      return;
     }
 
     // Set the image URL to the appropriate state property
     if (decalType) {
       state[decalType.stateProperty] = imageUrl;
-    
+
       if (!activeFilterTab[decalType.filterTab]) {
         handleActiveFilterTab(decalType.filterTab);
       }
@@ -131,6 +139,7 @@ const Customizer = () => {
       alert("Invalid decal type");
     }
   };
+
 
 
 
