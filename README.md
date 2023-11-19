@@ -11,4 +11,4 @@ This project is a fusion of modern web technologies like Tailwind CSS and React,
 - **Smooth Animations:** Enhanced user experience with fluid animations using Framer Motion.
 
 ##
-Key note - to get yours to work you must get an API key from OpenAi api and instert it into dalle routes in the server folder. 
+Key note - to get yours to work you must get an API key from OpenAi api and instert it into dalle routes in the server folder, if you notice in the delle route the api key is set to process.env, to get this to work you have to create a .env file and put your key in there. For security reasons it is better.
